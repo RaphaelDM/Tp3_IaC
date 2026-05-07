@@ -40,11 +40,12 @@ jobs:
         run: terraform -chdir=infra init -backend=false
 
       - name: Terraform Plan
-        run: terraform -chdir=infra plan -no-color
+        run: terraform -chdir=infra plan -no-color -input=false
         env:
           AWS_ACCESS_KEY_ID: test
           AWS_SECRET_ACCESS_KEY: test
           AWS_DEFAULT_REGION: us-east-1
+          TF_CLI_ARGS_plan: "-backend=false"
 
   security:
     name: Security
