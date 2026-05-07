@@ -1,6 +1,6 @@
-output "account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
+# output "account_id" {
+#   value = data.aws_caller_identity.current.account_id
+# }
 
 output "vpc_id" {
   value = module.network.vpc_id
