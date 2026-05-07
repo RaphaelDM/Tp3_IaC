@@ -1,0 +1,14 @@
+services:
+  localstack:
+    image: localstack/localstack:3.4
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: "s3,ec2,dynamodb,iam,sts,lambda,logs"
+      DEFAULT_REGION: "us-east-1"
+      DEBUG: "0"
+    volumes:
+      - localstack_data:/var/lib/localstack
+
+volumes:
+  localstack_data:
